@@ -1,4 +1,5 @@
 import time
+# from collections import Counter
 
 start_time = time.time()
 
@@ -10,7 +11,7 @@ f = open('names_2.txt', 'r')
 names_2 = f.read().split("\n")  # List containing 10000 names
 f.close()
 
-duplicates = []  # Return the list of duplicates in this data structure
+# duplicates = []  # Return the list of duplicates in this data structure
 
 # Replace the nested for loops below with your improvements
 # for name_1 in names_1:
@@ -18,6 +19,9 @@ duplicates = []  # Return the list of duplicates in this data structure
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
 # Starting Method is 7.330885648727417 seconds
+
+# duplicates = list((Counter(names_1) & Counter(names_2)).elements())
+# # runtime: 0.0070531368255615234 seconds
 
 duplicates = set(names_1) & set(names_2)
 # runtime: 0.003999233245849609 seconds
